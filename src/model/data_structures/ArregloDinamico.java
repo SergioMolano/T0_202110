@@ -84,6 +84,7 @@ public class ArregloDinamico implements IArregloDinamico {
 			// TODO implementar
 			// Recomendacion: Usar el criterio de comparacion natural (metodo compareTo()) definido en Strings.
 			String copia [];
+			String var = null;
 			copia = new String [tamanoMax];
 			int encontrado = 0;
 			for (int j = 0; j < elementos.length; j++){
@@ -91,12 +92,17 @@ public class ArregloDinamico implements IArregloDinamico {
 						copia[j-encontrado] = elementos[j];
 				}
 				else{
+					var = elementos[j];
 					encontrado++;
 				}
 			}
-			buscar(dato);
 			elementos = copia;
-			return null;
+			if (var!=null){
+				return var;
+			}
+			else{
+				return null;
+			}
 		}
 
 }
